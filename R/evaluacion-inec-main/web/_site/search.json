@@ -1,0 +1,72 @@
+[
+  {
+    "objectID": "metodologia.html",
+    "href": "metodologia.html",
+    "title": "Metodología y limitaciones",
+    "section": "",
+    "text": "Datos 100 % sintéticos preparados para una práctica de R y Quarto. No son resultados del INEC. Cada archivo incluye octubre y noviembre de 2026; las diferencias no representan tendencias de población."
+  },
+  {
+    "objectID": "metodologia.html#origen",
+    "href": "metodologia.html#origen",
+    "title": "Metodología y limitaciones",
+    "section": "",
+    "text": "Datos 100 % sintéticos preparados para una práctica de R y Quarto. No son resultados del INEC. Cada archivo incluye octubre y noviembre de 2026; las diferencias no representan tendencias de población."
+  },
+  {
+    "objectID": "metodologia.html#unidades-y-relaciones",
+    "href": "metodologia.html#unidades-y-relaciones",
+    "title": "Metodología y limitaciones",
+    "section": "Unidades y relaciones",
+    "text": "Unidades y relaciones\nLa unidad principal es una respuesta de encuesta (id_encuesta). La persona (id_persona) y el hogar (id_hogar) son identificadores distintos. Para vincular encuestas y hogares se utiliza id_hogar junto con periodo_referencia."
+  },
+  {
+    "objectID": "metodologia.html#criterios-de-calidad",
+    "href": "metodologia.html#criterios-de-calidad",
+    "title": "Metodología y limitaciones",
+    "section": "Criterios de calidad",
+    "text": "Criterios de calidad\n\nCompletitud: campos presentes entre los campos obligatorios definidos en el taller.\nValidez: pruebas aplicables que cumplen reglas de formato, dominio y rangos didácticos.\nUnicidad: proporción de claves de persona presentes que no participan en una repetición dentro de su período.\nConsistencia: relaciones evaluadas de actividad/horas y fecha/período que cumplen reglas.\n\nEl numerador y el denominador de cada indicador aparecen en las tablas técnicas. Una persona puede tener más de una alerta. Una ausencia no se debe transformar automáticamente en un dato inventado."
+  },
+  {
+    "objectID": "metodologia.html#pobreza-didáctica",
+    "href": "metodologia.html#pobreza-didáctica",
+    "title": "Metodología y limitaciones",
+    "section": "Pobreza didáctica",
+    "text": "Pobreza didáctica\nSe presenta una clasificación ficticia y simplificada: ingreso mensual total del hogar dividido para el número de miembros; se clasifica como “Pobre” si el resultado es menor que USD 185 por persona/mes. Este umbral no es oficial, no ajusta por equivalencias, necesidades, diseño muestral ni método institucional. No utilizar para decisiones socioeconómicas reales."
+  },
+  {
+    "objectID": "metodologia.html#calidad-aprobación-y-publicación",
+    "href": "metodologia.html#calidad-aprobación-y-publicación",
+    "title": "Metodología y limitaciones",
+    "section": "Calidad, aprobación y publicación",
+    "text": "Calidad, aprobación y publicación\nLas propuestas de normalización no representan correcciones autorizadas. La distribución educativa y territorial está desbalanceada intencionalmente. Los porcentajes no permiten inferir estimadores nacionales ni interpretar diferencias como causales."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Panel de calidad — encuesta socioeconómica sintética",
+    "section": "",
+    "text": "Advertencia: datos totalmente ficticios y desbalanceados. No usar para estadísticas oficiales ni inferencias sobre la población ecuatoriana."
+  },
+  {
+    "objectID": "index.html#indicadores-de-calidad",
+    "href": "index.html#indicadores-de-calidad",
+    "title": "Panel de calidad — encuesta socioeconómica sintética",
+    "section": "Indicadores de calidad",
+    "text": "Indicadores de calidad\n\n\n\nIndicadores descriptivos del conjunto sintético\n\n\nindicador\nnumerador\ndenominador\nporcentaje\nescenario\n\n\n\n\nCompletitud\n14354\n14400\n99.68\nOriginal\n\n\nValidez\n11903\n11954\n99.57\nOriginal\n\n\nUnicidad\n2364\n2400\n98.50\nOriginal\n\n\nConsistencia\n4762\n4794\n99.33\nOriginal\n\n\nCompletitud\n14354\n14400\n99.68\nPropuesta\n\n\nValidez\n11917\n11954\n99.69\nPropuesta\n\n\nUnicidad\n2364\n2400\n98.50\nPropuesta\n\n\nConsistencia\n4762\n4794\n99.33\nPropuesta"
+  },
+  {
+    "objectID": "index.html#educación-y-territorio",
+    "href": "index.html#educación-y-territorio",
+    "title": "Panel de calidad — encuesta socioeconómica sintética",
+    "section": "Educación y territorio",
+    "text": "Educación y territorio"
+  },
+  {
+    "objectID": "index.html#ingreso-pobreza-didáctica-e-incidencias",
+    "href": "index.html#ingreso-pobreza-didáctica-e-incidencias",
+    "title": "Panel de calidad — encuesta socioeconómica sintética",
+    "section": "Ingreso, pobreza didáctica e incidencias",
+    "text": "Ingreso, pobreza didáctica e incidencias\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLos controles y figuras se calculan a partir del RDS. Consulte Metodología para conocer las definiciones, denominadores y advertencias."
+  }
+]

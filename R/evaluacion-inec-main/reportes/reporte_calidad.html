@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Ivonne Benítez">
+<meta name="author" content="Salomé Cartagena">
+<meta name="author" content="Sebastián Ortiz">
+
+<title>Informe técnico de calidad de datos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="reporte_calidad_files/libs/clipboard/clipboard.min.js"></script>
+<script src="reporte_calidad_files/libs/quarto-html/quarto.js"></script>
+<script src="reporte_calidad_files/libs/quarto-html/popper.min.js"></script>
+<script src="reporte_calidad_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="reporte_calidad_files/libs/quarto-html/anchor.min.js"></script>
+<link href="reporte_calidad_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="reporte_calidad_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="reporte_calidad_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="reporte_calidad_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="reporte_calidad_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+  <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción">1. Introducción</a></li>
+  <li><a href="#objetivos" id="toc-objetivos" class="nav-link" data-scroll-target="#objetivos">2. Objetivos</a></li>
+  <li><a href="#metodología-y-procedencia" id="toc-metodología-y-procedencia" class="nav-link" data-scroll-target="#metodología-y-procedencia">3. Metodología y procedencia</a></li>
+  <li><a href="#indicadores-de-calidad" id="toc-indicadores-de-calidad" class="nav-link" data-scroll-target="#indicadores-de-calidad">4. Indicadores de calidad</a></li>
+  <li><a href="#comparación-entre-períodos" id="toc-comparación-entre-períodos" class="nav-link" data-scroll-target="#comparación-entre-períodos">5. Comparación entre períodos</a></li>
+  <li><a href="#educación-y-zonas" id="toc-educación-y-zonas" class="nav-link" data-scroll-target="#educación-y-zonas">6. Educación y zonas</a></li>
+  <li><a href="#ingresos-y-pobreza-didáctica" id="toc-ingresos-y-pobreza-didáctica" class="nav-link" data-scroll-target="#ingresos-y-pobreza-didáctica">7. Ingresos y pobreza didáctica</a></li>
+  <li><a href="#alertas-y-propuestas-de-normalización" id="toc-alertas-y-propuestas-de-normalización" class="nav-link" data-scroll-target="#alertas-y-propuestas-de-normalización">8. Alertas y propuestas de normalización</a></li>
+  <li><a href="#interpretación-y-limitaciones" id="toc-interpretación-y-limitaciones" class="nav-link" data-scroll-target="#interpretación-y-limitaciones">9. Interpretación y limitaciones</a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones">10. Conclusiones</a></li>
+  <li><a href="#actividad-de-interpretación-preguntas-que-deben-responder" id="toc-actividad-de-interpretación-preguntas-que-deben-responder" class="nav-link" data-scroll-target="#actividad-de-interpretación-preguntas-que-deben-responder">11. Actividad de interpretación: preguntas que deben responder</a></li>
+  <li><a href="#referencias-y-documentación" id="toc-referencias-y-documentación" class="nav-link" data-scroll-target="#referencias-y-documentación">12. Referencias y documentación</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Otros formatos</h2><ul><li><a href="reporte_calidad.docx"><i class="bi bi-file-word"></i>MS Word</a></li></ul></div></nav>
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Informe técnico de calidad de datos</h1>
+<p class="subtitle lead">Taller final</p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Autores/as</div>
+    <div class="quarto-title-meta-contents">
+             <p>Ivonne Benítez </p>
+             <p>Salomé Cartagena </p>
+             <p>Sebastián Ortiz </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Fecha de publicación</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">13/11/2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<hr>
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">1. Introducción</h2>
+<p>Este informe presenta resultados de un <strong>conjunto completamente sintético</strong> para practicar la evaluación de archivos de datos. No contiene cifras reales del INEC y su distribución muestral fue desbalanceada deliberadamente.</p>
+</section>
+<section id="objetivos" class="level2">
+<h2 class="anchored" data-anchor-id="objetivos">2. Objetivos</h2>
+<ul>
+<li>Identificar ausencias, formatos no válidos y relaciones incoherentes.</li>
+<li>Mostrar indicadores con numeradores y denominadores verificables.</li>
+<li>Comparar los períodos octubre y noviembre de 2026 y escenarios original/propuesta.</li>
+<li>Documentar limitaciones antes de difundir resultados.</li>
+</ul>
+</section>
+<section id="metodología-y-procedencia" class="level2">
+<h2 class="anchored" data-anchor-id="metodología-y-procedencia">3. Metodología y procedencia</h2>
+<p>El conjunto contiene 2400 registros de encuestas. Los controles se construyeron en scripts R independientes y se consolidaron en un archivo <strong>RDS</strong>. La etiqueta <em>pobreza didáctica</em> corresponde únicamente al umbral ilustrativo de USD 185 por persona y mes. <strong>No constituye una medición oficial.</strong></p>
+<p>La propuesta de normalización permanece en estado: <strong>PROPUESTAS NO APROBADAS</strong>.</p>
+</section>
+<section id="indicadores-de-calidad" class="level2">
+<h2 class="anchored" data-anchor-id="indicadores-de-calidad">4. Indicadores de calidad</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Indicadores por escenario (cifras del taller)</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">indicador</th>
+<th style="text-align: right;">numerador</th>
+<th style="text-align: right;">denominador</th>
+<th style="text-align: right;">porcentaje</th>
+<th style="text-align: left;">escenario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">14354</td>
+<td style="text-align: right;">14400</td>
+<td style="text-align: right;">99.68</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">11903</td>
+<td style="text-align: right;">11954</td>
+<td style="text-align: right;">99.57</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">2364</td>
+<td style="text-align: right;">2400</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">4762</td>
+<td style="text-align: right;">4794</td>
+<td style="text-align: right;">99.33</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">14354</td>
+<td style="text-align: right;">14400</td>
+<td style="text-align: right;">99.68</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">11917</td>
+<td style="text-align: right;">11954</td>
+<td style="text-align: right;">99.69</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">2364</td>
+<td style="text-align: right;">2400</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">4762</td>
+<td style="text-align: right;">4794</td>
+<td style="text-align: right;">99.33</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../resultados/figuras/06_indicadores.png" class="img-fluid figure-img"></p>
+<figcaption>Comparación descriptiva de indicadores.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="comparación-entre-períodos" class="level2">
+<h2 class="anchored" data-anchor-id="comparación-entre-períodos">5. Comparación entre períodos</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Indicadores por período; mismas reglas y definiciones</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">indicador</th>
+<th style="text-align: right;">numerador</th>
+<th style="text-align: right;">denominador</th>
+<th style="text-align: right;">porcentaje</th>
+<th style="text-align: left;">periodo</th>
+<th style="text-align: left;">escenario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">7175</td>
+<td style="text-align: right;">7200</td>
+<td style="text-align: right;">99.65</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">5955</td>
+<td style="text-align: right;">5975</td>
+<td style="text-align: right;">99.67</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">1182</td>
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">2386</td>
+<td style="text-align: right;">2396</td>
+<td style="text-align: right;">99.58</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">7179</td>
+<td style="text-align: right;">7200</td>
+<td style="text-align: right;">99.71</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">5948</td>
+<td style="text-align: right;">5979</td>
+<td style="text-align: right;">99.48</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">1182</td>
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">2376</td>
+<td style="text-align: right;">2398</td>
+<td style="text-align: right;">99.08</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">7175</td>
+<td style="text-align: right;">7200</td>
+<td style="text-align: right;">99.65</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">5961</td>
+<td style="text-align: right;">5975</td>
+<td style="text-align: right;">99.77</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">1182</td>
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">2386</td>
+<td style="text-align: right;">2396</td>
+<td style="text-align: right;">99.58</td>
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">7179</td>
+<td style="text-align: right;">7200</td>
+<td style="text-align: right;">99.71</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">5956</td>
+<td style="text-align: right;">5979</td>
+<td style="text-align: right;">99.62</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">1182</td>
+<td style="text-align: right;">1200</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">2376</td>
+<td style="text-align: right;">2398</td>
+<td style="text-align: right;">99.08</td>
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="educación-y-zonas" class="level2">
+<h2 class="anchored" data-anchor-id="educación-y-zonas">6. Educación y zonas</h2>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../resultados/figuras/06_educacion.png" class="img-fluid figure-img"></p>
+<figcaption>Distribución educativa por período y zona, en registros.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="ingresos-y-pobreza-didáctica" class="level2">
+<h2 class="anchored" data-anchor-id="ingresos-y-pobreza-didáctica">7. Ingresos y pobreza didáctica</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Media y mediana de ingresos monetarios válidos</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">periodo_referencia</th>
+<th style="text-align: left;">zona</th>
+<th style="text-align: right;">registros</th>
+<th style="text-align: right;">datos_validos</th>
+<th style="text-align: right;">media</th>
+<th style="text-align: right;">mediana</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">99</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">318.40</td>
+<td style="text-align: right;">318.40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Rural</td>
+<td style="text-align: right;">226</td>
+<td style="text-align: right;">221</td>
+<td style="text-align: right;">452.08</td>
+<td style="text-align: right;">316.28</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-10</td>
+<td style="text-align: left;">Urbana</td>
+<td style="text-align: right;">973</td>
+<td style="text-align: right;">961</td>
+<td style="text-align: right;">426.77</td>
+<td style="text-align: right;">279.56</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">99</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">376.74</td>
+<td style="text-align: right;">376.74</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Rural</td>
+<td style="text-align: right;">220</td>
+<td style="text-align: right;">216</td>
+<td style="text-align: right;">342.86</td>
+<td style="text-align: right;">235.93</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2026-11</td>
+<td style="text-align: left;">Urbana</td>
+<td style="text-align: right;">978</td>
+<td style="text-align: right;">960</td>
+<td style="text-align: right;">422.72</td>
+<td style="text-align: right;">303.42</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../resultados/figuras/06_ingresos.png" class="img-fluid figure-img"></p>
+<figcaption>Distribución de ingresos. La vista está acercada a 0–3.000 USD.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../resultados/figuras/06_pobreza.png" class="img-fluid figure-img"></p>
+<figcaption>Clasificación con umbral educativo; no es índice de pobreza oficial.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="alertas-y-propuestas-de-normalización" class="level2">
+<h2 class="anchored" data-anchor-id="alertas-y-propuestas-de-normalización">8. Alertas y propuestas de normalización</h2>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Quince reglas con mayor frecuencia de alertas</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">regla_id</th>
+<th style="text-align: left;">severidad</th>
+<th style="text-align: right;">incidencias</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">I01</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">36</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">V06</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">24</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I05</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">14</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I07</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">V07</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I04</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">V03</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I02</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">V08</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">10</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">I09</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">9</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I08</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">V04</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">V05</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">V09</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">7</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">I06</td>
+<td style="text-align: left;">REVISAR</td>
+<td style="text-align: right;">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../resultados/figuras/06_alertas.png" class="img-fluid figure-img"></p>
+<figcaption>Una persona puede tener más de una incidencia.</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Se registraron 28 propuestas de normalización, <strong>no autorizadas</strong>. La imputación estadística se examinó únicamente como escenario didáctico y no altera la base original.</p>
+</section>
+<section id="interpretación-y-limitaciones" class="level2">
+<h2 class="anchored" data-anchor-id="interpretación-y-limitaciones">9. Interpretación y limitaciones</h2>
+<p>La composición educativa y territorial del conjunto fue creada de forma desbalanceada; los resultados representan <strong>solo esta simulación</strong>. Las diferencias entre períodos no pueden interpretarse como tendencias poblacionales, ni los cambios entre escenario original/propuesta como mejoras oficiales sin validar su metodología y aprobación.</p>
+</section>
+<section id="conclusiones" class="level2">
+<h2 class="anchored" data-anchor-id="conclusiones">10. Conclusiones</h2>
+<p>El proceso de importación, perfilado, validación, integración y tabulación permitió producir resultados reproducibles. Antes de comunicar estos resultados, se deben inspeccionar las reglas, los denominadores, las incidencias y la bitácora de decisiones.</p>
+</section>
+<section id="actividad-de-interpretación-preguntas-que-deben-responder" class="level2">
+<h2 class="anchored" data-anchor-id="actividad-de-interpretación-preguntas-que-deben-responder">11. Actividad de interpretación: preguntas que deben responder</h2>
+<section id="por-qué-un-dataset-con-pocas-ausencias-todavía-puede-tener-problemas-de-validez-unicidad-e-integridad" class="level5">
+<h5 class="anchored" data-anchor-id="por-qué-un-dataset-con-pocas-ausencias-todavía-puede-tener-problemas-de-validez-unicidad-e-integridad"><strong>1. ¿Por qué un dataset con pocas ausencias todavía puede tener problemas de validez, unicidad e integridad?</strong></h5>
+<p><strong>R:</strong> Debido a que la ausencia de datos no es el único criterio para medir la calidad (completitud), sino que es necesario revisar la estructura de la base y de los datos. No basta con que exista efectivamente el dato, se debe analizar también si son válidos, únicos e íntegros. La calidad de un conjunto de datos no depende únicamente de su nivel de completitud; ya que, aunque existan pocos valores nulos, la información puede presentar fallos de validez, duplicidad o falta de coherencia estructural.</p>
+</section>
+<section id="cómo-distinguirá-una-fila-repetida-de-dos-personas-con-un-mismo-identificador" class="level5">
+<h5 class="anchored" data-anchor-id="cómo-distinguirá-una-fila-repetida-de-dos-personas-con-un-mismo-identificador"><strong>2. ¿Cómo distinguirá una fila repetida de dos personas con un mismo identificador?</strong></h5>
+<p><strong>R:</strong> Primero se identifica si en efecto tiene el mismo identificador. Una vez verificado este error, se compara la información de todas las variables para analizar si se trata de una fila repetida o no. En caso de que la observación tenga valores distintos en las demás variables, será preciso verificar si fue entrevistado en hogares diferentes o en dos momentos diferentes.</p>
+</section>
+<section id="qué-significa-un-id_hogar-sin-correspondencia-y-por-qué-no-debemos-eliminarlo-sin-investigación" class="level5">
+<h5 class="anchored" data-anchor-id="qué-significa-un-id_hogar-sin-correspondencia-y-por-qué-no-debemos-eliminarlo-sin-investigación"><strong>3. ¿Qué significa un <em>id_hogar</em> sin correspondencia, y por qué no debemos eliminarlo sin investigación?</strong></h5>
+<p><strong>R:</strong> Un error de correspondencia puede deberse al caso de un hogar nuevo que no estuvo inicialmente identificado. Es decir, el hogar existe pero no su id_hogar no tiene correspondencia dentro del catálogo de hogares No se debería eliminarlo sin una investigación previa; ya que, si efectivamente es un hogar nuevo recién conformado o detectado en campo, borrarlo significaría descartar datos reales de la población encuestada. Otra razón por la que no se debería eliminarlo es que podría alterar los totales poblacionales y distorsionar los indicadores estadísticos, ocasionando un sesgo en las estimaciones.</p>
+</section>
+<section id="qué-diferencia-existe-entre-media-y-mediana-ante-un-ingreso-extremo-alto" class="level5">
+<h5 class="anchored" data-anchor-id="qué-diferencia-existe-entre-media-y-mediana-ante-un-ingreso-extremo-alto"><strong>4. ¿Qué diferencia existe entre media y mediana ante un ingreso extremo alto?</strong></h5>
+<p><strong>R:</strong> La media, al sumar todos los valores y dividirlos para el total de elementos, aumenta de manera considerable y puede alterar el análisis de los datos. Por su parte, la mediana cambia menos, ya que es el valor central de un conjunto de datos ordenados y, por ende, no considera a los valores como tal.</p>
+</section>
+<section id="cuál-es-la-diferencia-entre-corrección-propuesta-y-corrección-aprobada" class="level5">
+<h5 class="anchored" data-anchor-id="cuál-es-la-diferencia-entre-corrección-propuesta-y-corrección-aprobada"><strong>5. ¿Cuál es la diferencia entre corrección <em>propuesta</em> y corrección <em>aprobada</em>?</strong></h5>
+<p><strong>R:</strong> La diferencia es la etapa de ejecución en la que se encuentra cada una. La propuesta es un cambio sugerido que es sujeto de análisis y validaciones. Por otro lado, la corrección aprobada ya pasó por dicha revisión y autoriza su ejecución. Debe mantener un control de versiones, responsables, justificación y fecha de los cambios realizados.</p>
+</section>
+<section id="qué-indicador-mejoró-entre-escenario-original-y-propuesta-es-correcto-afirmar-que-mejoró-la-estadística-oficial" class="level5">
+<h5 class="anchored" data-anchor-id="qué-indicador-mejoró-entre-escenario-original-y-propuesta-es-correcto-afirmar-que-mejoró-la-estadística-oficial"><strong>6. ¿Qué indicador mejoró entre escenario original y propuesta? ¿Es correcto afirmar que mejoró la estadística oficial?</strong></h5>
+<p><strong>R:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Indicadores de calidad por escenario</caption>
+<thead>
+<tr class="header">
+<th style="text-align: left;">indicador</th>
+<th style="text-align: right;">numerador</th>
+<th style="text-align: right;">denominador</th>
+<th style="text-align: right;">porcentaje</th>
+<th style="text-align: left;">escenario</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">14354</td>
+<td style="text-align: right;">14400</td>
+<td style="text-align: right;">99.68</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">11903</td>
+<td style="text-align: right;">11954</td>
+<td style="text-align: right;">99.57</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">2364</td>
+<td style="text-align: right;">2400</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">4762</td>
+<td style="text-align: right;">4794</td>
+<td style="text-align: right;">99.33</td>
+<td style="text-align: left;">Original</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Completitud</td>
+<td style="text-align: right;">14354</td>
+<td style="text-align: right;">14400</td>
+<td style="text-align: right;">99.68</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Validez</td>
+<td style="text-align: right;">11917</td>
+<td style="text-align: right;">11954</td>
+<td style="text-align: right;">99.69</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">Unicidad</td>
+<td style="text-align: right;">2364</td>
+<td style="text-align: right;">2400</td>
+<td style="text-align: right;">98.50</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Consistencia</td>
+<td style="text-align: right;">4762</td>
+<td style="text-align: right;">4794</td>
+<td style="text-align: right;">99.33</td>
+<td style="text-align: left;">Propuesta</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<p>Se puede observar que los resultados de Completitud, Unicidad y Consistencia se mantuvieron iguales en los dos escenarios. Por su parte, el indicador de Validez muestra una leve mejoría, pasando de 99,57% a 99,69%. Por tanto, se puede afirmar que el escenario propuesto mejoró ligeramente la calidad de los datos.</p>
+</section>
+<section id="por-qué-saverds-es-necesario-antes-de-elaborar-el-reporte-quarto" class="level5">
+<h5 class="anchored" data-anchor-id="por-qué-saverds-es-necesario-antes-de-elaborar-el-reporte-quarto"><strong>7. ¿Por qué <em>saveRDS()</em> es necesario antes de elaborar el reporte Quarto?</strong></h5>
+<p><strong>R:</strong> Para separar el ambiente de donde se procesan los datos y de la generación del documento, evitando que se hagan cálculos largos. Además; que permite guardar el objeto exacto ya limpio y procesado, separando la etapa de limpieza de datos de la etapa de visualización.Cuando Quarto renderiza un documento (.qmd), inicia una sesión de R completamente nueva y limpia desde cero. Si no se guardan los datos previamente, el reporte no tendrá acceso a las variables que se creó en la memoria durante el análisis.</p>
+</section>
+<section id="qué-diferencia-práctica-existe-entre-generar-un-documento-html-y-generar-un-sitio-web-de-dos-páginas" class="level5">
+<h5 class="anchored" data-anchor-id="qué-diferencia-práctica-existe-entre-generar-un-documento-html-y-generar-un-sitio-web-de-dos-páginas"><strong>8. ¿Qué diferencia práctica existe entre generar un documento HTML y generar un sitio web de dos páginas?</strong></h5>
+<p><strong>R:</strong> La diferencia práctica es la estructura del contenido. En el documento HTML es un documento único o una página única, mientras que el sitio web de dos páginas tiene un diseño de documentos o vistas múltiples y navegación dentro del mismo, para que el usuario pueda acceder con mayor facilidad a la información que sea de su interés.</p>
+</section>
+<section id="por-qué-los-resultados-desbalanceados-no-deben-extrapolarse-a-ecuador" class="level5">
+<h5 class="anchored" data-anchor-id="por-qué-los-resultados-desbalanceados-no-deben-extrapolarse-a-ecuador"><strong>9. ¿Por qué los resultados desbalanceados no deben extrapolarse a Ecuador?</strong></h5>
+<p><strong>R:</strong> Debido a que son datos para fines académicos de cinco provincias ficticiamente del Ecuador, no se debería extrapolar (generalizar los hallazgos de esa muestra hacia toda la población del país) porque los resultados estarían sesgados. Para ello, se debería haber realizado el ejercicio con una muestra estadísticamente significativa y la aplicación de factores de expansión adecuados.</p>
+</section>
+<section id="por-qué-la-variable-pobreza_didactica-no-equivale-a-pobreza-monetaria-oficial" class="level5">
+<h5 class="anchored" data-anchor-id="por-qué-la-variable-pobreza_didactica-no-equivale-a-pobreza-monetaria-oficial"><strong>10. ¿Por qué la variable <em>pobreza_didactica</em> no equivale a pobreza monetaria oficial?</strong></h5>
+<p><strong>R:</strong> Por ser un ejercicio ficticio, el umbral de USD 185 no considera toda la rigurosidad metodológica necesario para calcular el dato oficial de pobreza monetaria.</p>
+</section>
+</section>
+<section id="referencias-y-documentación" class="level2">
+<h2 class="anchored" data-anchor-id="referencias-y-documentación">12. Referencias y documentación</h2>
+<ul>
+<li><a href="https://r4ds.hadley.nz/">R for Data Science (2e)</a></li>
+<li><a href="https://quarto.org/docs/get-started/">Quarto — Getting Started</a></li>
+<li><a href="https://quarto.org/docs/output-formats/ms-word.html">Quarto — MS Word</a></li>
+</ul>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
